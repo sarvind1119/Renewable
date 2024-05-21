@@ -87,23 +87,71 @@ qa_with_sources = RetrievalQAWithSourcesChain.from_chain_type(
     chain_type="stuff",
     retriever=vectorstore.as_retriever()
 )
-query="Give the key points of TwelfthFiveYearPlan2012-17"
-#qa_with_sources(query)
+import streamlit as st
 
 # Sidebar contents
 with st.sidebar:
     st.title('💬 LLM Chat App on Ministry of New and Renewable Energy (Documents)...')
     st.markdown('''
     ## About
-    This GPT helps in answering questions related to document of Ministry of Tribal Affairs
-
-
+    This GPT helps in answering questions related to Ministry of New and Renewable Energy
 
     [Documents Repository](https://drive.google.com/drive/folders/1lC40pdVKJJXFYIy3QNgYOTlk8yo6AEoY?usp=sharing)
- 
     ''')
-    #add_vertical_space(5)
-    st.write('Made by LBSNAA for learning purpose](https://www.lbsnaa.gov.in/)')
+    
+    # Adding the new list with green bullet points
+    st.markdown('''
+    <div style="color: green;">
+    <ul>
+        <li>Annual-Report-2021-2022.pdf</li>
+        <li>Annual-Report-2022-2023.pdf</li>
+        <li>Biomass-Potential-Assessment-Report (M...</li>
+        <li>Broad_Overview_of_RE_Generation_Febru...</li>
+        <li>CEA Optimal mix report 2029-30 FINAL.pdf</li>
+        <li>ESS_Roadmap for India 2019-2032 by NITI...</li>
+        <li>Global Offshore Wind Policy Assessment ...</li>
+        <li>Inception Report.pdf</li>
+        <li>INDIA'S ENERGY STORAGE MISSION.pdf</li>
+        <li>Metocean Study.pdf</li>
+        <li>Monthly_RE_Generation_report_February...</li>
+        <li>National Framework for Promoting Ener...</li>
+        <li>National Green Hydrogen Mission.pdf</li>
+        <li>Renewable_Energy_Market_Update.pdf</li>
+        <li>Report of The Technical Committee on St...</li>
+        <li>Report On Supply Chain, Ports And Logis...</li>
+        <li>Report-onIndiaRenewableElectricityRoad...</li>
+        <li>Small Hydro Power.pdf</li>
+        <li>State-wise installed capacity of Renewabl...</li>
+        <li>State-wise installed capacity of Renewabl...</li>
+        <li>Strategy for Establishment of offshore wi...</li>
+        <li>WIND DATA SHARING POLICY.pdf</li>
+    </ul>
+    </div>
+    ''', unsafe_allow_html=True)
+
+    # Add vertical space
+    st.markdown('''
+    ---
+
+    **In case of suggestions/feedback/Contributions please reach out to:**
+    [NIC Training Unit @ nictu@lbsnaa.gov.in]
+    ''')
+
+
+# # Sidebar contents
+# with st.sidebar:
+#     st.title('💬 LLM Chat App on Ministry of New and Renewable Energy (Documents)...')
+#     st.markdown('''
+#     ## About
+#     This GPT helps in answering questions related to document of Ministry of Tribal Affairs
+
+
+
+#     [Documents Repository](https://drive.google.com/drive/folders/1lC40pdVKJJXFYIy3QNgYOTlk8yo6AEoY?usp=sharing)
+ 
+#     ''')
+#     #add_vertical_space(5)
+#     st.write('Made by LBSNAA for learning purpose](https://www.lbsnaa.gov.in/)')
 
 # def main():
 #     #st.title("Question and Answering App powered by LLM and Pinecone")
