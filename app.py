@@ -1,3 +1,6 @@
+#PLEASE check main.py file before going through this
+
+#Import necessary libraries
 from langchain.embeddings.openai import OpenAIEmbeddings
 import os
 from pinecone import ServerlessSpec
