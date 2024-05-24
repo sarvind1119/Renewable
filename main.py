@@ -33,6 +33,8 @@ embeddings=OpenAIEmbeddings(api_key=os.environ['OPENAI_API_KEY'])
 from langchain_pinecone import PineconeVectorStore
 
 #uploading the embeddings into Pinecone vectordatabase
+#IMP change the index name
+#CREATE an index using pinecone console and mention that name in 'index_name' 
 vectorstore_from_docs = PineconeVectorStore.from_documents(
     documents,
     index_name='renewable1',
