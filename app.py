@@ -29,7 +29,8 @@ model_name = 'text-embedding-ada-002'
 
 embed = OpenAIEmbeddings(
     model=model_name,
-    openai_api_key=OPENAI_API_KEY
+    openai_api_key=OPENAI_API_KEY,
+    
 )
 
 from langchain.vectorstores import Pinecone
@@ -50,7 +51,7 @@ def ask_and_get_answer(vector_store, q, k=3):
     from langchain_openai import ChatOpenAI
 
     # Initialize the language model with the specified parameters.
-    llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=0)
+    llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=0, prompt="Always answer in bullet points. Answer from the context given only else say I don't know. " )
 
     # Set up the retriever with the given vector store and search parameters.
     retriever = vector_store.as_retriever(search_type='similarity', search_kwargs={'k': k})
